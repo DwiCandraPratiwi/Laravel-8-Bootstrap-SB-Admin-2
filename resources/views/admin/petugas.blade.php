@@ -32,15 +32,18 @@
                 <td>{{ $data->telp }}</td>
                 <td>{{ $data->level }}</td>
                 <td>
-                    <a href="{{ route('petugas.edit', $data->id_petugas) }}" class="btn btn-primary">
-                        <i class="fas fa-fw fa-edit"></i>
-                    </a>
-                    <button action="{{ route('petugas.destroy', $data->id_petugas) }}" method="POST" 
-                        type="submit" class="btn btn-danger" onclick="confirm('Yakin ingin menghapus?')">
-                        @csrf 
-                        @method('DELETE')
-                        <i class="fas fa-fw fa-trash"></i>
-                    </button>
+                    <div class="row">
+                        <a href="{{ route('petugas.edit', $data->id_petugas) }}" class="btn btn-primary">
+                            <i class="fas fa-fw fa-edit"></i>
+                        </a>
+                        <form action="{{ route('petugas.destroy', $data->id_petugas) }}" method="POST">
+                            @csrf 
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="confirm('Yakin ingin menghapus?')">
+                                <i class="fas fa-fw fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
                 </td>
               </tr>
             @endforeach 

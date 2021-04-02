@@ -45,15 +45,15 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        // $petugas = Petugas::create([
-        //     $petugas->nama_petugas = $request->nama_petugas;
-        //     $petugas->username = $request->username;
-        //     $petugas->password = $request->password;
-        //     $petugas->telp = $request->telp;
-        //     $petugas->level = $request->level; 
-        //     $petugas->save();
-        // ]);
-        // return redirect('/admin/petugas');
+        $nama_petugas = $request->nama_petugas;
+        $username = $request->username;
+        $password = $request->password;
+        $telp = $request->telp;
+        $level = $request->level; 
+
+        DB::select('call insertPetugas(?, ?, ?, ?, ?)', array($nama_petugas, $username, $password, $telp, $level));
+
+        return redirect('/admin/petugas');
     }
 
     /**

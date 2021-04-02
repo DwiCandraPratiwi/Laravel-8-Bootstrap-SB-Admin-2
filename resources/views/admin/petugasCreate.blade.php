@@ -1,6 +1,5 @@
 @extends('layouts.admin')
-@section('content')
-@foreach ($petugas as $item) 
+@section('content') 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Tambah Data Petugas</h6>
@@ -11,8 +10,8 @@
         </a>
         <br><br>
         <div class="table-responsive">
-            <form class="form-signin" action="/admin/petugas" method="POST">
-                @method("PUT")
+            <form class="form-signin" action="{{ route('petugas.store') }}" method="POST">
+                @method("POST")
                 @csrf
                 <div class="mb-3">
                     <label for="" class="form-label">Nama Petugas</label>
@@ -32,15 +31,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Level</label>
-                    <select name="level" id="level">
-                        @if($item->level== "admin") 
-                        <option value="">Select</option>
-                        <option selected value="admin">Admin</option>
-                        <option value="petugas">Petugas</option>
-                        @else 
+                    <select name="level" id="level" class="form-control">
+                        <option value="" selected disabled hidden>--Select Level--</option>
                         <option value="admin">Admin</option>
-                        <option selected value="petugas">Petugas</option>
-                        @endif
+                        <option value="petugas">Petugas</option>
                     </select>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
@@ -48,5 +42,4 @@
         </div>
     </div>
 </div>
-@endforeach
 @endsection
