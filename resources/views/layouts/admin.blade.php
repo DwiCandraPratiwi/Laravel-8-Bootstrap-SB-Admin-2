@@ -56,7 +56,7 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="/pengaduan">
+        <a class="nav-link" href="{{ route('pengaduan.index') }}">
           <i class="fas fa-fw fa-edit"></i>
           <span>Lihat Pengaduan</span></a>
       </li>

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\PengaduanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,7 @@ Route::get('/login', [AuthController::class, 'loginView'])->name('login');
     Route::middleware('auth:petugas', 'admin')->prefix('admin')->group(function(){
         Route::get('/', [PetugasController::class, 'homeAdmin']);
         Route::resource('petugas', PetugasController::class);
+        Route::resource('pengaduan', PengaduanController::class); //aku nambahin ini
     });
 
 
