@@ -22,6 +22,11 @@ class PetugasController extends Controller
         return view('admin.pengaduan');
     }
 
+    public function laporanView()
+    {
+        return view('admin.laporan');
+    }
+
     public function index(){
         $petugas = DB::select("call listpetugas");
         return view("admin.petugas", compact("petugas"));

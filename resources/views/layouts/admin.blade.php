@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/adminHome">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -58,7 +58,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/pengaduan">
           <i class="fas fa-fw fa-edit"></i>
-          <span>Pengaduan</span></a>
+          <span>Lihat Pengaduan</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
@@ -70,9 +70,9 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="/laporan">
           <i class="fas fa-fw fa-book-open"></i>
-          <span>Laporan</span></a>
+          <span>Generate Laporan</span></a>
       </li>
 
       <!-- Nav Item - Tables -->

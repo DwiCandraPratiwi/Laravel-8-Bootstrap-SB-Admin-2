@@ -39,6 +39,10 @@ Route::get('/dashboard', [MasyarakatController::class, 'dashboard']);
 
 //admin
 Route::get('/pengaduan', [PetugasController::class, 'pengaduanView']);
+Route::get('/laporan', [PetugasController::class, 'laporanView']);
+Route::get('/adminHome', [PetugasController::class, 'homeAdmin']);
+
+
 
 
 
