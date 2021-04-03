@@ -11,6 +11,7 @@ class Pengaduan extends Model
 
     protected $table = 'Pengaduan';
     protected $fillable = ['tgl_pengaduan', 'nik', 'isi_laporan', 'foto', 'status'];
+    public $timestamps = false;
 
     public function masyarakat(){
         return $this->belongsTo(Masyarakat::class, 'nik');

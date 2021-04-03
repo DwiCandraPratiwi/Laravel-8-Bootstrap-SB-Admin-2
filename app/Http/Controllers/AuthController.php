@@ -38,12 +38,12 @@ class AuthController extends Controller
         ])->first();
 
         if(Auth::guard('masyarakat')->attempt($login)){
-            return redirect('/home');
+            return redirect('/masyarakat');
         }elseif($petugas){
             Auth::guard('petugas')->login($petugas);
             $level = Auth::guard('petugas')->user()->level;
             if($level == 'petugas'){
-                return 'petugas';
+                return redirect('/petugas');
             }else{
                 return redirect('/admin');
             }

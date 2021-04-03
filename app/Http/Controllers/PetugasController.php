@@ -18,8 +18,9 @@ class PetugasController extends Controller
         return view('admin.homeAdmin');
     }
 
-    public function pengaduanView(){
-        return view('admin.pengaduan');
+    public function homePetugas()
+    {
+        return view('petugas.home');
     }
 
     public function laporanView()
@@ -49,15 +50,13 @@ class PetugasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $nama_petugas = $request->nama_petugas;
-        $username = $request->username;
-        $password = $request->password;
-        $telp = $request->telp;
-        $level = $request->level; 
-
-        DB::select('call insertPetugas(?, ?, ?, ?, ?)', array($nama_petugas, $username, $password, $telp, $level));
-
+    {   $petugas = Petugas::create([
+            'nama_petugas' => $request->nama_petugas,
+            'username' => $request->username,
+            'password' => $request->password,
+            'telp' => $request->telp,
+            'level' => $request->level
+    ]);
         return redirect('/admin/petugas');
     }
 

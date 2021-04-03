@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.home')
 @section('content')
 <section>
     <div class="card shadow mb-4">
@@ -8,6 +8,10 @@
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <a href="{{ route('pengaduan.create') }}" class="btn btn-primary">
+                    Tambah Pengaduan
+                </a>
+                <br><br>
                 <thead>
                     <tr>
                         <th>No</th>

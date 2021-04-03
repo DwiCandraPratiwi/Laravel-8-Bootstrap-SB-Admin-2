@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengaduan;
+use DB;
+use Auth;
+use Storage;
 
 class PengaduanController extends Controller
 {
@@ -11,7 +15,7 @@ class PengaduanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function listPengaduanAdmin()
     {
         $pengaduan = DB::select("call listpengaduan");
         return view("admin.pengaduan", compact("pengaduan"));
@@ -24,7 +28,9 @@ class PengaduanController extends Controller
      */
     public function create()
     {
-        //
+        $nik = Auth::guard('masyarakat')->user()->nik;
+        $tgl_pengaduan = date('Y-m-d');
+        return view("masyarakat.pengaduanCreate", compact('nik', 'tgl_pengaduan'));
     }
 
     /**
@@ -35,7 +41,22 @@ class PengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nik = Auth::guard('masyarakat')->user()->nik;
+        $tgl_pengaduan = date('Y-m-d');
+        if($request->hasfile('foto'))
+        {
+            $foto = $request->file('foto');
+            $disk = Storage::disk('public_path')->put('', $foto);
+            $url = '/foto/' . $disk;
+        }
+        $pengaduan = Pengaduan::create([
+            'nik' => $nik,
+            'tgl_pengaduan' => $tgl_pengaduan,
+            'isi_laporan' => $request->isi_laporan,
+            'foto' => $url,
+            'status' => '0'
+    ]);
+        return redirect()->route('masyarakat.listPengaduan');
     }
 
     /**
@@ -46,7 +67,8 @@ class PengaduanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pengaduan = Pengaduan::find($id);
+        return view('masyarakat.pengaduanDetail');
     }
 
     /**

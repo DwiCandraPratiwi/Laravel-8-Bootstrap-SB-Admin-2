@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Halaman Admin</title>
+  <title>Pengaduan Masyarakat</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{ asset('vendor') }}/bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/adminHome">
+        <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -51,34 +51,26 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Addons
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.pengaduan') }}">
-          <i class="fas fa-fw fa-edit"></i>
-          <span>Lihat Pengaduan</span></a>
+        <a class="nav-link" href="{{ route('pengaduan.index') }}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Verifikasi Pengaduan</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('petugas.index') }}">
-          <i class="fas fa-fw fa-user-alt"></i>
-          <span>Petugas</span></a>
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tanggapan</span></a>
       </li>
 
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="/laporan">
-          <i class="fas fa-fw fa-book-open"></i>
-          <span>Generate Laporan</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="/logout">
-          <i class="fas fa-fw fa-sign-out-alt"></i>
+          <i class="fas fa-fw fa-table"></i>
           <span>Logout</span></a>
       </li>
 
@@ -118,14 +110,12 @@
               </div>
             </div>
           </form>
-
         </nav>
-        <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-        @yield('content')
+          @yield('content')
 
         </div>
         <!-- /.container-fluid -->
@@ -154,6 +144,24 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{ asset('vendor') }}/bootstrap/vendor/jquery/jquery.min.js"></script>
