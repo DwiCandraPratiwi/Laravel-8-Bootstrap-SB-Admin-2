@@ -15,6 +15,8 @@ class PengaduanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+
     public function listPengaduanAdmin()
     {
         $pengaduan = DB::select("call listpengaduan");

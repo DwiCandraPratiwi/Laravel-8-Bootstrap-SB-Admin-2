@@ -9,7 +9,7 @@
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <a href="{{ route('pengaduan.create') }}" class="btn btn-primary">
-                    Tambah Pengaduan
+                    Tambah / Buat Pengaduan
                 </a>
                 <br><br>
                 <thead>

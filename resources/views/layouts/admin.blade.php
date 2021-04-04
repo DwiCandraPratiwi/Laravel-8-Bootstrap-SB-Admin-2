@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/adminHome">
+        <a class="nav-link" href="/admin/">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -70,7 +70,7 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="/laporan">
+        <a class="nav-link" href="/admin/laporan">
           <i class="fas fa-fw fa-book-open"></i>
           <span>Generate Laporan</span></a>
       </li>

@@ -29,7 +29,8 @@ Route::get('/login', [AuthController::class, 'loginView'])->name('login');
     Route::middleware('auth:petugas', 'admin')->prefix('admin')->group(function(){
         Route::get('/', [PetugasController::class, 'homeAdmin']);
         Route::resource('petugas', PetugasController::class);
-        Route::get('pengaduan', [PengaduanController::class, 'index'])->name('admin.pengaduan'); //aku nambahin ini
+        Route::get('/pengaduan', [PengaduanController::class, 'listPengaduanAdmin'])->name('admin.pengaduan');
+        Route::get('/laporan', [PetugasController::class, 'laporanView']);
     });
 
     Route::middleware('auth:petugas')->prefix('petugas')->group(function(){
